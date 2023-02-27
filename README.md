@@ -81,7 +81,6 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -144,7 +143,6 @@ Example:
 
 ## 👥 Author <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 
 👤 **Andrea Tamara Diegaardt**
 
@@ -158,7 +156,7 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+
 
 - [ ] **A better graphical user interface**
 - [ ] **A signup functionality**
@@ -180,7 +178,6 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
 
 If you like this project, go ahead and give it a star. It is very much appreciated.
 
@@ -190,7 +187,6 @@ If you like this project, go ahead and give it a star. It is very much appreciat
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
 
 I would like to thank Microverse for providing me with the reading material that helped me during this project development.
 
@@ -200,7 +196,6 @@ I would like to thank Microverse for providing me with the reading material that
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
 
 - **Can I reuse this projects' code?**
 
