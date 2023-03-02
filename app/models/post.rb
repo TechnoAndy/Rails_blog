@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
   after_save :increment_posts_counter
+  after_save :recent_comments
 
   private
 
