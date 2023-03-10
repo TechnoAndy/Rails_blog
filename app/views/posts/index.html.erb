@@ -1,7 +1,8 @@
 <div class="posts-container">
 
         <div class="user-block">
-            <img class="user-image" src=<%= @user.photo %> alt="user"/>
+                    <img class="user-image" src=<%= @user.photo %> alt="user photo"/>
+            </div>
             <div class="user-info">
                 <h2 class="user-name"><%= @user.name %></h2>
                 <p class="user-post-count">Number of posts: <%= @user.post_counter %></p>
@@ -11,8 +12,8 @@
         <% @posts.each do |post| %>
             <div class="user-recent-post">
                 <h2 class="user-post-title">Post : <%=post.title %></h2>
-                <p class="user-post-body"><%= post.body %></p>
-                <h3 class="counters">Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter %></h3>
+                <p class="user-post-body"><%= post.text %></p>
+                <h3 class="counters">Comments: <%= post.comment_counter%>, Likes: <%= post.likes_counter %></h3>
 
                 <div class="comment_container ">
                     <% post.recent_comments.each do |comment|%>
