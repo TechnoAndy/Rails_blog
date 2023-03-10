@@ -1,1 +1,14 @@
-<h1> User </h1>
+<div class="user-container">
+    <h1 class="user-heading">User Count <%= @users.length%></h1>
+    <% @users.each do |user| %>
+        <%= link_to user_path(user.id), class:"text-dec" do %>
+        <div class="user-block">
+                    <img class="user-image" src=<%= user.photo %> alt="user photo"/>
+            <div class="user-info">
+                <h2 class="user-name"><%= user.name %></h2>
+                <p class="user-post-count">Number of posts: <%= user.post_counter %></p>
+            </div>
+        </div>
+        <% end%>
+    <% end%>
+</div>

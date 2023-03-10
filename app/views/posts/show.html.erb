@@ -1,1 +1,15 @@
-<h1> Post </h1>
+<div class="user-container">
+    <div class="user-recent-post">
+        <div class="post-inf-box">
+            <h2 class="user-post-title">Post: #<%= @post.id %> by <%= @post.author.name %></h2>
+            <h3>Comments: <%= @post.comment_counter%>, Likes: <%= @post.likes_counter %></h3>
+        </div>
+        <p class="user-post-body"><%= @post.text %></p>
+
+    </div>
+    <div class="comment_box">
+        <% @post.recent_comments.each do |comment| %>
+            <h3 class="comments"><%= comment.author.name %>:   <%= comment.text %></h3>
+        <% end %>
+    </div>
+</div>
