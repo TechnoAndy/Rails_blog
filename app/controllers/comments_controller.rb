@@ -10,9 +10,9 @@ class CommentsController < ApplicationController
     @comment.author = current_user
     @comment.post = Post.find(params[:post_id])
     if @comment.save
-      render :new
+      redirect_to user_post_path(@comment.post.author, @comment.post)
     else
-      redirect_to user_posts_path(@comment.post.author, @comment.post)
+      render :new
     end
   end
 

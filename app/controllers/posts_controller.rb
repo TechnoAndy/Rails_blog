@@ -18,9 +18,9 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
     @post.author = current_user
     if @post.save
-      render :new
-    else
       redirect_to user_posts_path(current_user)
+    else
+      render :new
     end
   end
 
