@@ -1,25 +1,25 @@
-<div class="posts-container">
+<div class="p-block">
 
-        <div class="user-block">
-            <img class="user-image" src=<%= @user.photo %> alt="user photo"/>
-            <div class="user-info">
-                <h2 class="user-name"><%= @user.name %></h2>
-                <p class="user-post-count">Number of posts: <%= @user.post_counter %></p>
+        <div class="u-data">
+            <img class="u-image" src=<%= @user.photo %> alt="user photo"/>
+            <div class="u-i">
+                <h2 class="u-name"><%= @user.name %></h2>
+                <p class="u-post-count">Number of posts: <%= @user.post_counter %></p>
             </div>
         </div>
 
         <% @posts.each do |post| %>
-            <div class="user-recent-post">
-                <h2 class="user-post-title">Post : <%= post.id %></h2>
-                <p class="user-post-body"><%= post.text %></p>
-                <h3 class="counters">Comments: <%= post.comment_counter%>, Likes: <%= post.likes_counter %></h3>
+            <div class="u-recent-post">
+                <h2 class="u-post-title">Post : <%= post.id %></h2>
+                <p class="u-post-body"><%= post.text %></p>
+                <h3 class="count-counters">Comments: <%= post.comment_counter%>, Likes: <%= post.likes_counter %></h3>
 
-                <div class="comment_container ">
+                <div class="comment_box ">
                     <% post.recent_comments.each do |comment|%>
-                        <h3 class="comments"><%= comment.author.name %>:   <%= comment.text %></h3>
+                        <h3 class="comments-comment"><%= comment.author.name %>:   <%= comment.text %></h3>
                     <% end %>
                 </div>
-                <div class="like_comment"
+                <div class="like-comment-box"
                     <%= form_with url: post_likes_path(post) do |form| %>
                         <%= form.submit "Like", class: "btn" %>
                     <% end %>

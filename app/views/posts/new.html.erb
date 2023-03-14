@@ -3,7 +3,7 @@
     <div class="form_post">
         <%= form_with model: @post do |form| %>
             <%= form.text_field :title, class: "form-title", placeholder: "Title" %>
-            <%= form.text_area :text, class: "form-text", placeholder: "Type your post here..." %>
+            <%= form.text_area :text, class: "form-text", placeholder: "Add post here..." %>
             <%= form.submit "Create", class: "form_btn" %>
             <% end %>
     </div>

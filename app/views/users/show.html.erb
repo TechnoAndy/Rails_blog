@@ -1,13 +1,13 @@
-<div class="user-container">
-    <div class="user-box">
-        <img class="user-image" src=<%= @user.photo %> alt="user photo"/>
-        <div class="user-info">
-            <h2 class="user-name"><%= @user.name %></h2>
-            <p class="user-post-count">Number of posts: <%= @user.post_counter%></p>
+<div class="u-box">
+    <div class="user-box-1">
+        <img class="u-image" src=<%= @user.photo %> alt="user photo"/>
+        <div class="u-i">
+            <h2 class="u-name"><%= @user.name %></h2>
+            <p class="u-post-count">Number of posts: <%= @user.post_counter%></p>
         </div>
     </div>
 
-    <div class="user-bio">
+    <div class="u-biography">
         <p>Bio</p> <br/>
         <p><%= @user.bio %></p>
     </div>
@@ -15,13 +15,13 @@
 
     <% @user.recent_posts.each do |post| %>
         <%= link_to user_post_path(@user.id, post.id), class:"text" do %>
-        <div class="user-recent-post">
-            <h2 class="user-post-title">Post : <%= post.title %></h2>
-            <p class="user-post-body"><%= post.text %></p>
-            <h3 class="user-post-counters">Comments: <%= post.comment_counter%>, Likes: <%= post.likes_counter %><h3>
+        <div class="u-recent-post">
+            <h2 class="u-p-title">Post : <%= post.title %></h2>
+            <p class="u-p-body"><%= post.text %></p>
+            <h3 class="u-p-counters">Comments: <%= post.comment_counter%>, Likes: <%= post.likes_counter %><h3>
             </div>
             <% end %>
-            <div class="like_comment">
+            <div class="like_comment-box">
                 <%= form_with url: post_likes_path(post) do |form| %>
                     <%= form.submit "Like", class: "btn" %>
                 <% end %>
