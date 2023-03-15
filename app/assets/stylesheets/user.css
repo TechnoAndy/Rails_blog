@@ -1,4 +1,4 @@
-.users-container {
+.u-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,20 +9,20 @@
   padding: 20px 0;
 }
 
-.text-dec {
+.u-image {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 90%;
-  text-decoration: none;
+  width: 130px;
+  height: 100px;
+  background-color: bisque;
+  border-radius: 10px;
 }
 
-.user-heading {
+.u-header {
   font-size: 30px;
   margin: 40px 0 20px 0;
 }
 
-.user-block {
+.u-data {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -33,15 +33,7 @@
   padding: 20px 0;
 }
 
-.user-image {
-  display: flex;
-  width: 130px;
-  height: 100px;
-  background-color: bisque;
-  border-radius: 10px;
-}
-
-.user-info {
+.u-i {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,27 +43,12 @@
   border-radius: 10px;
 }
 
-.user-name {
+.u-name {
   font-size: 30px;
   margin-bottom: 20px;
 }
 
-.user-post-count {
-  display: flex;
-  flex-direction: row;
-  font-size: 15px;
-  align-self: flex-end;
-}
-
-.user-bio {
-  margin: 10px 0;
-  width: 70%;
-  border: 2px solid #000;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.user-recent-post {
+.u-recent-post {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
@@ -81,19 +58,34 @@
   border-radius: 10px;
 }
 
-.user-post-body {
-  margin-top: 10px;
+.u-post-count {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  align-self: flex-end;
 }
 
-.text {
-  width: 100%;
+.text-new-post-path {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 90%;
   text-decoration: none;
 }
 
-.user-post-counters {
+.u-biography {
+  margin: 10px 0;
+  width: 70%;
+  border: 2px solid #000;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.u-p-body {
+  margin-top: 10px;
+}
+
+.u-p-counters {
   align-self: flex-end;
 }
 
@@ -118,10 +110,18 @@ button {
   font-size: 18px;
 }
 
-.like_comment {
+.like-comment-box {
   display: flex;
   gap: 10px;
   flex-direction: row;
   align-self: flex-end;
   margin-right: 15%;
+}
+
+.text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
 }
