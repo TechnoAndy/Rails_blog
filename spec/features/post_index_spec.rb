@@ -22,15 +22,16 @@ RSpec.describe '#UserIndex', type: :feature do
         author: @user1, title: 'Hello', text: 'Naturally beautiful', comment_counter: 1, likes_counter: 8
       ),
       @post2 = Post.create(
-        author: @user2, title: 'Hello', text: 'Art is anything you can get away with', comment_counter: 3, likes_counter: 28
+        author: @user2, title: 'Hello', text: 'Art is anything you can get away with', comment_counter: 3,
+        likes_counter: 28
       )
     ]
 
     @comments = [
-      Comment.create(post: @post1, author: @user1,
-                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-      Comment.create(post: @post2, author: @user2,
-                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+      Comment.create(post: @post1, author: @user1, text: 'Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+      Comment.create(post: @post2, author: @user2, text: 'Lorem ipsum dolor sit amet, consectetur
+       adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
     ]
 
     visit user_posts_path(@user.first, @posts.first)
