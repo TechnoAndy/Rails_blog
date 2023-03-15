@@ -19,19 +19,24 @@ RSpec.describe '#UserIndex', type: :feature do
 
     @posts = [
       @post1 = Post.create(
-        author: @user1, title: 'Hello', text: 'Naturally beautiful', comment_counter: 1, likes_counter: 8
+        author: @user1,
+        title: 'Hello',
+        text: 'Naturally beautiful',
+        comment_counter: 1,
+        likes_counter: 8
       ),
       @post2 = Post.create(
-        author: @user2, title: 'Hello', text: 'Art is anything you can get away with', comment_counter: 3,
+        author: @user2,
+        title: 'Hi',
+        text: 'Art is anything you can get away with',
+        comment_counter: 3,
         likes_counter: 28
       )
     ]
 
     @comments = [
-      Comment.create(post: @post1, author: @user1, text: 'Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
-      Comment.create(post: @post2, author: @user2, text: 'Lorem ipsum dolor sit amet, consectetur
-       adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+      Comment.create(post: @post1, author: @user1, text: 'Lorem ipsum .'),
+      Comment.create(post: @post2, author: @user2, text: 'Lorem ipsum .')
     ]
 
     visit user_posts_path(@user.first, @posts.first)
@@ -42,27 +47,29 @@ RSpec.describe '#UserIndex', type: :feature do
       expect(page).to have_css("img[src='#{@user.first.photo}']")
     end
 
-    it 'should display the user name' do
+    it 'should display the users username' do
       expect(page).to have_content(@user.first.name)
     end
 
-    it 'should display the number of posts' do
+    it 'should display the number of posts a user has written' do
       expect(page).to have_content(@user.first.post_counter)
     end
 
-    it 'should display the body of the post' do
+    it 'should display some of the posts body' do
       expect(page).to have_content(@posts.first.text)
     end
 
-    it 'should display the post text' do
-      expect(page).to have_content(@posts.first.text)
+    it 'should display the first comments on a post' do
+      @posts.first.comments.each do |comment|
+        expect(page).to have_content(comment.text)
+      end
     end
 
-    it 'should display the number of comments' do
+    it 'should display how many comments a post has' do
       expect(page).to have_content(@posts.first.comment_counter)
     end
 
-    it 'should display the number of likes' do
+    it 'should how many likes a post has' do
       expect(page).to have_content(@posts.first.likes_counter)
     end
 

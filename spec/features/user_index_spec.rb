@@ -33,7 +33,13 @@ RSpec.describe 'root page features' do
     end
     it 'displays the number of posts for each user' do
       @user.each do |user|
-        expect(page).to have_content(user.post_counter)
+        expect(page).to have_content("Number of posts: #{user.post_counter}")
+      end
+    end
+
+    describe 'GET /index' do
+      it 'has a link to user show page' do
+        expect(page).to have_selector("a[href='#{user_path(@user1.id)}']")
       end
     end
   end
