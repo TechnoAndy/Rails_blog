@@ -1,56 +1,54 @@
 require 'rails_helper'
+RSpec.describe 'posts#index', type: :feature do
+  describe 'Post spec' do
+    before(:each) do
+      @user = User.create(name: 'Andy', photo: 'Andy.png', bio: 'Lorem.', post_counter: 0)
 
-RSpec.describe 'root page features' do
-  before(:each) do
-    @user = [
-      @user1 = User.create(
-        name: 'Black Beauty',
-        photo: 'https://img.bidorbuy.co.za/image/fetch/c_limit,h_448,q_auto:eco,w_448/https://justaddink.co.za/wp-content/uploads/2022/09/JAI_AD_-61980235.png',
-        bio: 'Natural hair expert.',
-        post_counter: 3
-      ),
-      @user2 = User.create(
-        name: 'Abstract Woman',
-        photo: 'https://cdn.shopify.com/s/files/1/1878/0085/products/diy-paint-by-number-kit-for-adults-on-canvas-african-beauty-paint-by-number_530x@2x.jpg?v=1617198917',
-        bio: 'Abstract artist.',
-        post_counter: 7
-      )
-    ]
+      @post1 = Post.create(title: 'First Post', text: 'This is my first post', comment_counter: 0, likes_counter: 0,
+                           author: @user)
+      @post2 = Post.create(title: 'Second Post', text: 'This is my second post', comment_counter: 0, likes_counter: 0,
+                           author: @user)
+      @post3 = Post.create(title: 'Third Post', text: 'This is my third post', comment_counter: 0, likes_counter: 0,
+                           author: @user)
 
-    @posts = [
-      @post1 = Post.create(
-        author: @user1, title: 'Hello', text: 'Naturally beautiful', comment_counter: 1, likes_counter: 8
-      ),
-      @post2 = Post.create(
-        author: @user2, title: 'Hello', text: 'Art is anything you can get away with', comment_counter: 3,
-        likes_counter: 28
-      )
-    ]
+      @comment1 = Comment.create(text: 'Well done!', author: User.first,
+                                 post: Post.first)
+      @comment2 = Comment.create(text: 'Great Job!', author: User.first, post: Post.first)
+      @comment3 = Comment.create(text: 'Congrats!', author: User.first, post: Post.first)
 
-    visit user_posts_path(@user.first, @posts.first)
-  end
-
-  describe '#PostShowPage' do
-    it 'Should display the post author' do
-      expect(page).to have_content(@posts.first.author.name)
+      visit(user_posts_path(@user.id))
     end
 
-    it 'Should display the number of comments' do
-      expect(page).to have_content(@posts.first.comment_counter)
+    it 'shows posts title' do
+      expect(page).to have_content('First Post')
     end
 
-    it 'Should display the number of likes' do
-      expect(page).to have_content(@posts.first.likes_counter)
+    it 'shows the person who wrote the post' do
+      expect(page).to have_content('Andy')
     end
 
-    it 'should display the post body' do
-      expect(page).to have_content(@posts.first.text)
+    it 'shows number of comments' do
+      post = Post.first
+      expect(post.comment_counter).to eql(3)
     end
 
-    it 'should display the name of the commentor' do
-      @posts.first.comments.each do |comment|
-        expect(page).to have_content(comment.author.name)
-      end
+    it 'shows number of likes' do
+      post = Post.first
+      expect(page).to have_content(post.likes_counter)
+    end
+
+    it 'can see the post\'s body.' do
+      expect(page).to have_content('This is my first post')
+    end
+
+    it 'can see the username of each commentor.' do
+      expect(page).to have_content('Andy')
+    end
+
+    it 'can see the comments of each commentor.' do
+      expect(@comment1.text).to eql('Well done!')
+      expect(@comment2.text).to eql('Great Job!')
+      expect(@comment3.text).to eql('Congrats!')
     end
   end
 end

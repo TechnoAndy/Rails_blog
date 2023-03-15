@@ -1,49 +1,62 @@
 require 'rails_helper'
-
-RSpec.describe 'UserShow', type: :feature do
-  before :each do
-    @user_one = User.create(name: 'Andy', photo: 'https://img.bidorbuy.co.za/image/fetch/c_limit,h_448,q_auto:eco,w_448/https://justaddink.co.za/wp-content/uploads/2022/09/JAI_AD_-61980235.png',
-                            bio: 'Full-Stack Developer from South Africa', post_counter: 2)
-
-    @user_two = User.create(name: 'Nickson', photo: 'https://cdn.shopify.com/s/files/1/1878/0085/products/diy-paint-by-number-kit-for-adults-on-canvas-african-beauty-paint-by-number_530x@2x.jpg?v=1617198917',
-                            bio: 'Web Developer from Uganda', post_counter: 3)
-
-    @first_post = Post.create(author: @user_one, title: 'Hello', text: 'First post', comment_counter: 3,
-                              likes_counter: 2)
-
-    @second_post = Post.create(author: @user_one, title: 'Second', text: 'Second post', comment_counter: 1,
-                               likes_counter: 2)
-
-    @third_post = Post.create(author: @user_one, title: 'Third', text: 'Third post', comment_counter: 2,
-                              likes_counter: 1)
-
-    @user_posts = @user_one.posts
-  end
-
-  describe 'Show page features' do
-    before :each do
-      visit user_path(@user_one)
+RSpec.describe 'user#Show', type: :feature do
+  describe 'User Model' do
+    before(:each) do
+      @user1 = User.create(name: 'David',
+                           photo: 'Andy.png',
+                           bio: 'Lorem.',
+                           post_counter: 0)
+      @user2 = User.create(name: 'Angela',
+                           photo: 'Andy.png',
+                           bio: 'Lorem.',
+                           post_counter: 0)
+      visit root_path
+      @post1 = Post.create(title: 'First Post', text: 'This is my first post', comment_counter: 0, likes_counter: 0,
+                           author: @user1)
+      @post2 = Post.create(title: 'Second Post', text: 'This is my second post', comment_counter: 0, likes_counter: 0,
+                           author: @user1)
+      @post3 = Post.create(title: 'Third Post', text: 'This is my third post', comment_counter: 0, likes_counter: 0,
+                           author: @user1)
+      @post4 = Post.create(title: 'Fourth Post', text: 'This is my fourth post', comment_counter: 0, likes_counter: 0,
+                           author: @user1)
+      visit user_path(@user1.id)
+    end
+    it "show user's profile picture" do
+      all('img').each do |i|
+        expect(i[:src]).to eq('Andy.png')
+      end
     end
 
-    it "should show the user's profile picture" do
-      expect(page).to have_css("img[src*='#{@user_one.photo}']")
+    it "show user's name" do
+      expect(page).to have_content 'David'
     end
 
-    it "should show the user's name" do
-      expect(page).to have_content(@user_one.name)
+    it 'show number of posts per user' do
+      expect(page).to have_content(4)
     end
 
-    it "should show the user's bio" do
-      expect(page).to have_content(@user_one.bio)
+    it "show user's bio." do
+      expect(page).to have_content('Lorem.')
     end
 
-    it "should show a button to see all user's posts" do
+    it "show user's first 3 posts." do
+      expect(page).to have_content 'This is my fourth post'
+      expect(page).to have_content 'This is my third post'
+      expect(page).to have_content 'This is my second post'
+    end
+
+    it "show button that lets me view all of a user's posts." do
       expect(page).to have_link('See all posts')
     end
 
-    it "should redirect to the user's posts index page when the 'See all posts' button is clicked" do
-      click_link('See all posts')
-      expect(page).to have_current_path(user_posts_path(@user_one))
+    it "When I click on a user post, it redirects me to that post's show page" do
+      click_link 'See all posts'
+      expect(page).to have_current_path user_posts_path(@user1, @post_1)
+    end
+
+    it "When I click to see all posts, it redirects me to the user's post's index page" do
+      click_link 'See all posts'
+      expect(page).to have_current_path user_posts_path(@user1)
     end
   end
 end
