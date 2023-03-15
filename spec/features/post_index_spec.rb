@@ -22,7 +22,8 @@ RSpec.describe '#UserIndex', type: :feature do
         author: @user1, title: 'Hello', text: 'Naturally beautiful', comment_counter: 1, likes_counter: 8
       ),
       @post2 = Post.create(
-        author: @user2, title: 'Hi', text: 'Art is anything you can get away with', comment_counter: 3, likes_counter: 28
+        author: @user2, title: 'Hi', text: 'Art is anything you can get away with', comment_counter: 3, 
+        likes_counter: 28
       )
     ]
 
