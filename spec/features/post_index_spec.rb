@@ -30,8 +30,8 @@ RSpec.describe 'posts#index', type: :feature do
     end
 
     it 'shows number of posts of user has written' do
-      post = Post.all
-      expect(post.size).to eq(6)
+      # post = Post.all
+      expect(page).to have_content("#{@user.post_counter}")
     end
 
     it 'shows posts title' do
