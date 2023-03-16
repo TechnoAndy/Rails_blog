@@ -27,8 +27,9 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* body {
+body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: rgb(249, 226, 227);
-} */
+  align-items: center;
+}
