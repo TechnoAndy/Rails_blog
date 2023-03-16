@@ -1,10 +1,10 @@
-<div class="u-box">
-    <div class="u-recent-post">
-        <div class="p-i-box">
-            <h2 class="u-p-title">Post: #<%= @post.id %> by <%= @post.author.name %></h2>
+<div class="users-container">
+    <div class="user-recent-post">
+        <div class="post-info-box">
+            <h2 class="user-post-title">Post: #<%= @post.id %> by <%= @post.author.name %></h2>
             <h3>Comments: <%= @post.comment_counter%>, Likes: <%= @post.likes_counter %></h3>
         </div>
-        <p class="u-p-body"><%= @post.text %></p>
+        <p class="user-post-text"><%= @post.text %></p>
 
     </div>
     <div class="comment_box">
