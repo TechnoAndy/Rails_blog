@@ -19,7 +19,7 @@
   justify-content: center;
   width: 150px;
   padding: 5px;
-  background-color: burlywood;
+  background-color: white;
   border-radius: 5px;
   font-size: 20px;
   margin: 20px;
@@ -40,7 +40,7 @@
   resize: vertical;
 }
 
-.p-block {
+.posts-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +51,7 @@
   padding: 20px 0;
 }
 
-.p-info {
+.posts-info {
   display: flex;
   flex-direction: column;
   border: 2px solid #000;
@@ -59,7 +59,7 @@
   width: 400px;
 }
 
-.p-comments {
+.post-comments {
   display: flex;
   flex-direction: column;
   border: 2px solid #000;
@@ -67,24 +67,24 @@
   width: 400px;
 }
 
-.p-i-box {
+.post-info-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: auto;
 }
 
-.count-counters {
+.counter {
   align-self: flex-end;
   font-size: 18px;
 }
 
-.comments-comment {
+.comments {
   font-size: 18px;
   padding: 10px 0;
 }
 
-.comment_box {
+.comment_container {
   border: 1px solid black;
   border-radius: 10px;
   margin: 5px 0;

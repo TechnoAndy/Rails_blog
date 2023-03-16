@@ -1,27 +1,26 @@
-<div class="p-block">
-
-        <div class="u-data">
-            <img class="u-image" src=<%= @user.photo %> alt="user photo"/>
-            <div class="u-i">
-                <h2 class="u-name"><%= @user.name %></h2>
-                <p class="u-post-count">Number of posts: <%= @user.post_counter %></p>
+<div class="posts-container">
+        <div class="user-box">
+            <img class="user-img" src=<%= @user.photo %> alt="user photo"/>
+            <div class="user-info-box">
+                <h2 class="user-name"><%= @user.name %></h2>
+                <p class="user-post-count">Number of posts: <%= @user.post_counter %></p>
             </div>
         </div>
 
         <% @user.posts.each do |post| %>
-            <div class="u-recent-post">
+            <div class="user-recent-post">
             <%= link_to user_post_path(@user.id, post.id), class:"post_text" do %>
-                <h2 class="u-post-title">Post : <%= post.title %></h2>
-            <% end %>
-                <p class="u-post-body"><%= post.text %></p>
-                <h3 class="count-counters">Comments: <%= post.comment_counter%>, Likes: <%= post.likes_counter %></h3>
+                <h2 class="user-post-title">Post : <%= post.title %></h2>
+                <% end %>
+                <p class="user-post-text"><%= post.text %></p>
+                <h3 class="counter">Comments: <%= post.comment_counter%>, Likes: <%= post.likes_counter %></h3>
 
-                <div class="comment_box ">
+                <div class="comment_container">
                     <% post.recent_comments.each do |comment|%>
-                        <h3 class="comments-comment"><%= comment.author.name %>:   <%= comment.text %></h3>
+                        <h3 class="comments"><%= comment.author.name %>:   <%= comment.text %></h3>
                     <% end %>
                 </div>
-                <div class="like-comment-box"
+                <div class="like-comment">
                     <%= form_with url: post_likes_path(post) do |form| %>
                         <%= form.submit "Like", class: "btn" %>
                     <% end %>

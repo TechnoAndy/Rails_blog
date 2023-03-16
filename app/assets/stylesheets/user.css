@@ -1,4 +1,4 @@
-.u-box {
+.users-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,56 +9,67 @@
   padding: 20px 0;
 }
 
-.u-image {
+.user-img {
   display: flex;
-  width: 130px;
-  height: 100px;
-  background-color: bisque;
+  width: 180px;
+  height: 130px;
+  background-color: white;
   border-radius: 10px;
 }
 
-.u-header {
+.users-heading {
   font-size: 30px;
   margin: 40px 0 20px 0;
 }
 
-.u-data {
+.user-box-posts {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: 40px;
+  gap: 10px;
   margin-bottom: 20px;
   font-weight: bold;
-  width: 70%;
+  width: 50%;
   padding: 20px 0;
 }
 
-.u-i {
+.user-box {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
   width: 100%;
+  padding: 20px 0;
+}
+
+.user-info-box {
   border: 2px solid #000;
   padding: 10px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.u-name {
+.user-name {
   font-size: 30px;
   margin-bottom: 20px;
 }
 
-.u-recent-post {
+.user-recent-post {
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
-  width: 70%;
+  margin: 10px;
+  width: 100%;
   border: 2px solid #000;
   padding: 20px;
   border-radius: 10px;
 }
 
-.u-post-count {
+.user-post-count {
   display: flex;
   flex-direction: row;
   font-size: 15px;
@@ -73,19 +84,19 @@
   text-decoration: none;
 }
 
-.u-biography {
-  margin: 10px 0;
-  width: 70%;
+.user-bio {
+  margin: 10px;
+  width: 98%;
   border: 2px solid #000;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
 }
 
-.u-p-body {
+.user-post-body {
   margin-top: 10px;
 }
 
-.u-p-counters {
+.user-post-counters {
   align-self: flex-end;
 }
 
@@ -94,7 +105,7 @@ button {
   justify-content: center;
   width: 150px;
   padding: 5px;
-  background-color: burlywood;
+  background-color: white;
   border-radius: 5px;
   font-size: 20px;
   margin: 20px;
@@ -102,20 +113,41 @@ button {
 
 .btn {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   width: auto;
   padding: 2px 10px;
-  background-color: bisque;
+  background-color: white;
   border-radius: 15px;
   font-size: 18px;
 }
 
-.like-comment-box {
+.btn-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+  padding: 2px 10px;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 18px;
+  align-self: flex-end;
+}
+
+.like-comment {
   display: flex;
   gap: 10px;
   flex-direction: row;
   align-self: flex-end;
-  margin-right: 15%;
+  margin-right: 5%;
+}
+
+.like-comment-1 {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-self: flex-end;
+  margin-right: 5%;
 }
 
 .text {
@@ -124,4 +156,74 @@ button {
   flex-direction: row;
   justify-content: center;
   text-decoration: none;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: auto;
+  height: auto;
+  margin-top: 5%;
+  padding: 4% 3%;
+}
+
+.field,
+.actions {
+  padding-bottom: 10px;
+}
+
+.title_login {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 26px;
+}
+
+.label {
+  font-size: 18px;
+}
+
+.input {
+  width: 320px;
+  height: 30px;
+  margin-top: 3px;
+  padding-left: 5px;
+}
+
+.input-1 {
+  width: 320px;
+  height: 30px;
+  margin-top: 3px;
+  background-color: white;
+}
+
+.remember-me {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+.actions {
+  margin: 5px 0;
+}
+
+.btn-submit {
+  width: auto;
+  padding: 2px 10px;
+  background-color: white;
+  font-size: 18px;
+}
+
+.field-third {
+  margin-bottom: 10px;
+}
+
+.text_area {
+  width: 320px;
+  height: 60px;
+  margin-top: 3px;
+  padding-left: 5px;
+  resize: vertical;
 }
