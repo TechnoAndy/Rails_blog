@@ -44,6 +44,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'mailcatcher', '~> 0.8.0'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -69,6 +71,7 @@ group :development do
   gem 'cancancan'
   gem 'devise'
   gem 'letter_opener', group: :development
+  gem 'thin', '1.5.0'
 end
 
 group :test do
