@@ -10,12 +10,12 @@
     <div class="comment_box">
         <% @comments.each do |comment|%>
             <h3 class="comments"><%= comment.author.name %>:   <%= comment.text %></h3>
-        <% end %>
+            <% if can? :delete, comment %>
+                <%= button_to 'Delete comment', delete_user_post_comment_path(current_user, @post, comment), class: "btn_delete_comment", method: :delete %>
+                <% end %>
+            <% end %>
     </div>
-    <div class="form_post">
-        <%= form_with model: [@post, @post.comments.build] do |form| %>
-        <%= form.text_area :text, class: "comment_text", placeholder: "Type your comment here..." %>
-        <%= form.submit "Create", class: "form_btn" %>
-  <% end %>
-    </div>
+    <% if can? :delete, @post %>
+        <%= button_to 'Delete post', delete_user_post_path(current_user, @post), class:"btn_delete_post", method: :delete %>
+    <% end %>
 </div>
