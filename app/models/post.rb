@@ -7,8 +7,8 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  after_save :post_counter
-  after_destroy :post_counter
+  after_save :posts_counter
+  after_destroy :posts_counter
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
@@ -16,11 +16,11 @@ class Post < ApplicationRecord
 
   private
 
-  def post_counter
+  def posts_counter
     if destroyed?
-      author.decrement!(:post_counter)
+      author.decrement!(:posts_counter)
     else
-      author.increment!(:post_counter)
+      author.increment!(:posts_counter)
     end
   end
 end

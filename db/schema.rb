@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_200927) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "text"
-    t.integer "comment_counter"
+    t.integer "comments_counter", default: 0
     t.integer "likes_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_200927) do
     t.string "name"
     t.string "photo"
     t.text "bio"
-    t.integer "post_counter", default: 0
+    t.integer "posts_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_200927) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "role"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
