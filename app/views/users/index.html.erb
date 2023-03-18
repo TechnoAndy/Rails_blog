@@ -1,17 +1,17 @@
 <div class="users-container">
-    <h1 class="users-heading">User Count <%= @users.length%></h1>
+    <h1 class="users-heading">Users Count <%= @users.length%></h1>
     <% @users.each do |user| %>
         <%= link_to user_path(user.id), class:"text-dec" do %>
         <div class="user-box">
-            <img class="user-img" src=<%= user.photo %> alt="user photo"/>
+            <img class="user-img" src="<%= user.photo %>" alt=<%= user.name %>/>
             <div class="user-info-box">
                 <h2 class="user-name"><%= user.name %></h2>
-                <p class="user-post-count">Number of posts: <%= user.post_counter %></p>
+                <p class="user-post-count">Number of posts: <%= user.post_counter%></p>
             </div>
         </div>
         <% end%>
-        <% end%>
-        <%= link_to new_post_path, class:"text-new-post-path" do %>
-        <button>Create a post</button>
-        <% end%>
+        <% end %>
+        <%= link_to new_user_post_path(current_user), class:"text-dec" do %>
+        <button class="button">Create a post</button>
+        <% end %>
 </div>
