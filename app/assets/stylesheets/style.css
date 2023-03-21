@@ -48,21 +48,19 @@ nav {
   color: white;
 }
 
-.posts-container {
+.posts-cnt {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
   width: 80%;
-  border-radius: 10px;
   margin: 50px 0;
   padding: 20px 0;
 }
 
-.posts-info {
+.posts-i {
   display: flex;
   flex-direction: column;
-  border: 2px solid #000;
   margin-bottom: 20px;
   width: 400px;
 }
@@ -85,7 +83,7 @@ nav {
   padding: 10px 0;
 }
 
-.comment_container {
+.comment_cnt {
   border: 1px solid black;
   border-radius: 10px;
   margin: 10px 0;
@@ -100,7 +98,7 @@ nav {
   width: 70%;
 }
 
-.post-inf-box {
+.post-i-cnt {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -199,7 +197,7 @@ nav {
   padding: 20px 0;
 }
 
-.user-img {
+.user-image {
   display: flex;
   width: 130px;
   height: 100px;
@@ -207,7 +205,7 @@ nav {
   border-radius: 10px;
 }
 
-.user-info-box {
+.user-i-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -222,7 +220,7 @@ nav {
   margin-bottom: 20px;
 }
 
-.user-post-count {
+.user-post-number {
   display: flex;
   flex-direction: row;
   font-size: 15px;
@@ -247,7 +245,7 @@ nav {
   border-radius: 10px;
 }
 
-.user-post-text {
+.user-post-data {
   margin-top: 10px;
 }
 
@@ -259,7 +257,7 @@ nav {
   text-decoration: none;
 }
 
-.user-post-counters {
+.user-post-numbers {
   align-self: flex-end;
 }
 
@@ -307,7 +305,7 @@ nav {
   cursor: pointer;
 }
 
-.like_comment {
+.likes_comment {
   display: flex;
   gap: 10px;
   flex-direction: row;
@@ -325,9 +323,6 @@ nav {
   height: auto;
   margin-top: 5%;
   padding: 4% 3%;
-  border-radius: 10px;
-  border: 1px solid black;
-  box-shadow: 10px 10px 10px grey;
 }
 
 .field,
