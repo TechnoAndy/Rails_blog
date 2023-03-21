@@ -1,7 +1,7 @@
 header {
   display: flex;
   width: 100%;
-  background-color: rgb(43, 43, 43);
+  background-color: rgb(130, 128, 128);
   padding: 0 20px;
 }
 
@@ -30,14 +30,13 @@ nav {
 }
 
 .nav-btn {
-  border-radius: 15px;
   font-size: 18px;
   padding: 2px;
   width: 100px;
   border: 1px solid rgb(43, 43, 43);
   display: flex;
   justify-content: center;
-  background-color: burlywood;
+  background-color: whitesmoke;
   margin: 20px;
 }
 
@@ -85,14 +84,12 @@ nav {
 
 .comment_cnt {
   border: 1px solid black;
-  border-radius: 10px;
   margin: 10px 0;
   padding: 5px 10px;
 }
 
 .comment-box {
   border: 1px solid black;
-  border-radius: 10px;
   margin: 5px 0;
   padding: 5px 10px;
   width: 70%;
@@ -126,7 +123,7 @@ nav {
   justify-content: center;
   width: 150px;
   padding: 5px;
-  background-color: burlywood;
+  background-color: whitesmoke;
   border-radius: 5px;
   font-size: 20px;
   margin: 20px;
@@ -159,9 +156,8 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: whitesmoke;
   width: 80%;
-  border-radius: 10px;
   margin: 50px 0;
   padding: 20px 0;
 }
@@ -201,8 +197,7 @@ nav {
   display: flex;
   width: 130px;
   height: 100px;
-  background-color: bisque;
-  border-radius: 10px;
+  background-color: whitesmoke;
 }
 
 .user-i-box {
@@ -212,7 +207,6 @@ nav {
   width: 100%;
   border: 2px solid #000;
   padding: 10px;
-  border-radius: 10px;
 }
 
 .user-name {
@@ -232,7 +226,6 @@ nav {
   width: 70%;
   border: 2px solid #000;
   padding: 20px;
-  border-radius: 10px;
 }
 
 .user-recent-post {
@@ -242,7 +235,6 @@ nav {
   width: 70%;
   border: 2px solid #000;
   padding: 20px;
-  border-radius: 10px;
 }
 
 .user-post-data {
@@ -266,7 +258,7 @@ nav {
   justify-content: center;
   width: 150px;
   padding: 5px;
-  background-color: burlywood;
+  background-color: whitesmoke;
   border-radius: 5px;
   font-size: 20px;
   margin: 20px;
@@ -278,7 +270,7 @@ nav {
   justify-content: center;
   width: auto;
   padding: 2px 10px;
-  background-color: bisque;
+  background-color: whitesmoke;
   border-radius: 15px;
   font-size: 18px;
 }
@@ -354,7 +346,7 @@ nav {
 .btn-submit {
   width: auto;
   padding: 2px 10px;
-  background-color: burlywood;
+  background-color: whitesmoke;
   border-radius: 10px;
   font-size: 18px;
 }
