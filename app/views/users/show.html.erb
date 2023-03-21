@@ -1,7 +1,7 @@
 <div class="users-container">
     <div class="user-box">
-        <img class="user-img" src="<%= @user.photo %>" alt="user"/>
-        <div class="user-info-box">
+        <img class="user-image" src="<%= @user.photo %>" alt="user"/>
+        <div class="user-i-box">
             <h2 class="user-name"><%= @user.name %></h2>
             <p class="user-post-count">Number of posts: <%= @user.posts_counter%></p>
         </div>
@@ -18,10 +18,10 @@
         <div class="user-recent-post">
             <h2 class="user-post-title">Post : <%= post.title %></h2>
             <p class="user-post-text"><%= post.text %></p>
-            <h3 class="user-post-counters">Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter %><h3>
+            <h3 class="user-post-numbers">Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter %><h3>
             </div>
             <% end %>
-            <div class="like_comment">
+            <div class="likes_comment">
                 <%= form_with url: user_post_likes_path(current_user, post) do |form| %>
                     <%= form.submit "Like", class: "btn" %>
                 <% end %>
